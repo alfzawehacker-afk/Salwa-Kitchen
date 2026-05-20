@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // تشغيل أولي
 });
-// 1. قاموس النصوص الشامل للموقع
+// 1. قاموس النصوص الشامل للموقع (مصحح بالكامل للإنجليزي)
 const translations = {
     ar: {
         "langText": "EN",
