@@ -149,3 +149,39 @@ body {
     font-size: 0.9rem; transition: 0.3s;
 }
 .contact-card:hover { background: var(--main-orange); color: white; }
+
+
+/* تنسيق زر تحويل اللغة المتطور */
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+/* حركة خفيفة عند تمرير الماوس فوق الزر */
+.lang-btn:hover {
+    border-color: #ff4a00; /* اللون البرتقالي لمطبخ سلوى */
+    color: #ff4a00;
+    box-shadow: 0 4px 10px rgba(255, 74, 0, 0.1);
+}
+
+/* حجم أيقونة الكرة الأرضية */
+.lang-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* تغيير اتجاه التنسيق تلقائياً عند تحويل اللغة للإنجليزية */
+html[lang="en"] body {
+    font-family: Arial, sans-serif;
+}
