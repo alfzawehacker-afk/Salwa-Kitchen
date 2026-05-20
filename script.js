@@ -31,53 +31,83 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // تشغيل أولي
 });
-// 1. قاموس النصوص: أضف هنا كل الـ IDs والنصوص التي تريد ترجمتها في موقعك
+// 1. قاموس النصوص الشامل للموقع
 const translations = {
     ar: {
-        langBtn: "EN",
-        partner: "انضم كشريك",
-        company: "شركتنا",
-        title: "الطبخ مع سلوى",
-        desc: "نمزج المحبة مع الغذاء بلمسة إبداع"
+        "langText": "EN",
+        "menuBtn": "المزيد",
+        "nav-home": "الرئيسية",
+        "nav-login": "تسجيل الدخول",
+        "nav-healthy-food": "أكل صحي",
+        "nav-healthy-drinks": "مشروبات صحية",
+        "main-title": "الطبخ مع سلوى",
+        "slogan": "نمزج المحبة مع الغذاء بلمسة إبداع",
+        "dish1-title": "مجبوس اللحم الفاخر",
+        "dish1-desc": "بلمسات سلوى الخاصة ومزيج المحبة، سر النكهة الخليجية الأصلية.",
+        "dish1-cal": "850 سعرة",
+        "dish2-title": "صينية الدجاج بالخضار",
+        "dish2-desc": "غذاء صحي يغمر القلب بالدفء، خضروات طازجة مطهوة بعناية.",
+        "dish2-cal": "420 سعرة",
+        "contact-title": "تواصل وتوصيل",
+        "contact-whatsapp": "واتساب",
+        "contact-facebook": "فيسبوك",
+        "contact-phone": "اتصال هاتف",
+        "contact-landline": "الخط الأرضي",
+        "footer-text": "جميع الحقوق محفوظة لمطبخ سلوى © 2026"
     },
     en: {
-        langBtn: "العربية",
-        partner: "Become a Partner",
-        company: "Our Company",
-        title: "Cooking with Salwa",
-        desc: "We mix love with food with a touch of creativity"
+        "langText": "العربية",
+        "menuBtn": "More",
+        "nav-home": "Home",
+        "nav-login": "Login",
+        "nav-healthy-food": "Healthy Food",
+        "nav-healthy-drinks": "Healthy Drinks",
+        "main-title": "Cooking with Salwa",
+        "slogan": "We mix love with food with a touch of creativity",
+        "dish1-title": "Luxury Meat Majboos",
+        "dish1-desc": "With Salwa's special touches and a mix of love, the secret of the authentic Gulf flavor.",
+        "dish1-cal": "850 Calories",
+        "dish2-title": "Chicken Tray with Vegetables",
+        "dish2-desc": "Healthy food that warms the heart, fresh vegetables cooked with care.",
+        "dish2-cal": "420 Calories",
+        "contact-title": "Contact & Delivery",
+        "contact-whatsapp": "WhatsApp",
+        "contact-facebook": "Facebook",
+        "contact-phone": "Phone Call",
+        "contact-landline": "Landline",
+        "footer-text": "All rights reserved to Salwa Kitchen © 2026"
     }
 };
 
-// 2. دالة التحويل بين اللغتين والاتجاهين
+// 2. دالة تحويل اللغة والاتجاه الذكية
 function toggleLanguage() {
     const htmlTag = document.documentElement;
-    const currentLang = htmlTag.getAttribute('lang');
+    const currentLang = htmlTag.getAttribute('lang') || 'ar';
     
     // تحديد اللغة والاتجاه القادم
     const nextLang = currentLang === 'ar' ? 'en' : 'ar';
     const nextDir = currentLang === 'ar' ? 'ltr' : 'rtl';
     
-    // تطبيق اللغة والاتجاه على وسم الـ HTML الرئيسي
+    // تطبيق التغيير على الوسم الرئيسي لقلب اتجاه الموقع تلقائيًا
     htmlTag.setAttribute('lang', nextLang);
     htmlTag.setAttribute('dir', nextDir);
     
-    // تحديث النصوص داخل عناصر الصفحة بناءً على الـ ID والقاموس أعلاه
-    document.getElementById('langText').innerText = translations[nextLang].langBtn;
-    document.getElementById('link-partner').innerText = translations[nextLang].partner;
-    document.getElementById('link-company').innerText = translations[nextLang].company;
-    document.getElementById('main-title').innerText = translations[nextLang].title;
-    document.getElementById('main-desc').innerText = translations[nextLang].desc;
+    // فحص وترجمة الـ IDs الموجودة في القاموس بأمان
+    Object.keys(translations[nextLang]).forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.innerText = translations[nextLang][id];
+        }
+    });
     
-    // حفظ خيار المستخدم في متصفحه لكي لا يعود للغة الافتراضية عند تحديث الصفحة
+    // حفظ اختيار المستخدم في ذاكرة المتصفح
     localStorage.setItem('preferredLanguage', nextLang);
 }
 
-// 3. كود لتذكر لغة المستخدم وتشغيلها تلقائياً عند فتح الموقع مجدداً
-window.onload = function() {
+// 3. تشغيل اللغة المفضلة تلقائيًا عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage');
-    // إذا كانت هناك لغة محفوظة وتختلف عن الحالية، قم بالتحويل فوراً
     if (savedLang && savedLang !== document.documentElement.getAttribute('lang')) {
         toggleLanguage();
     }
-}
+});
