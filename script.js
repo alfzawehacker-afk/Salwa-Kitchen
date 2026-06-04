@@ -1,3 +1,4 @@
+```js
 document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('menuBtn');
     const sideMenu = document.getElementById('sideMenu');
@@ -29,9 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // تشغيل أولي
+    revealOnScroll();
+
+    // ✅ تشغيل اللغة المفضلة تلقائيًا عند تحميل الصفحة
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang && savedLang !== document.documentElement.getAttribute('lang')) {
+        toggleLanguage();
+    }
 });
-// 1. قاموس النصوص الشامل للموقع (مصحح بالكامل للإنجليزي)
+
+// قاموس النصوص
 const translations = {
     ar: {
         "langText": "EN",
@@ -53,7 +61,7 @@ const translations = {
         "contact-facebook": "فيسبوك",
         "contact-phone": "اتصال هاتف",
         "contact-landline": "الخط الأرضي",
-        "footer-text": "جميع الحقوق محفوظة لمطبخ سلوى © 2026"
+        "footer-text": "جميع الحقوق محفوظة لمطبخ سلوى ©️ 2026"
     },
     en: {
         "langText": "العربية",
@@ -75,39 +83,31 @@ const translations = {
         "contact-facebook": "Facebook",
         "contact-phone": "Phone Call",
         "contact-landline": "Landline",
-        "footer-text": "All rights reserved to Salwa Kitchen © 2026"
+        "footer-text": "All rights reserved to Salwa Kitchen ©️ 2026"
     }
 };
 
-// 2. دالة تحويل اللغة والاتجاه الذكية
+// دالة تحويل اللغة
 function toggleLanguage() {
     const htmlTag = document.documentElement;
     const currentLang = htmlTag.getAttribute('lang') || 'ar';
-    
-    // تحديد اللغة والاتجاه القادم
     const nextLang = currentLang === 'ar' ? 'en' : 'ar';
     const nextDir = currentLang === 'ar' ? 'ltr' : 'rtl';
-    
-    // تطبيق التغيير على الوسم الرئيسي لقلب اتجاه الموقع تلقائيًا
+
     htmlTag.setAttribute('lang', nextLang);
     htmlTag.setAttribute('dir', nextDir);
-    
-    // فحص وترجمة الـ IDs الموجودة في القاموس بأمان
+
     Object.keys(translations[nextLang]).forEach(id => {
         const element = document.getElementById(id);
         if (element) {
-            element.innerText = translations[nextLang][id];
+            element.textContent = translations[nextLang][id];
         }
     });
-    
-    // حفظ اختيار المستخدم في ذاكرة المتصفح
+
     localStorage.setItem('preferredLanguage', nextLang);
 }
+```
 
-// 3. تشغيل اللغة المفضلة تلقائيًا عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang && savedLang !== document.documentElement.getAttribute('lang')) {
-        toggleLanguage();
-    }
-});
+---
+
+انسخه كامل والصقه في الـ `script.js` بدل القديم. لما تخلص قولي ✅
