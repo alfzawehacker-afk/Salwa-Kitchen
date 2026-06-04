@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-    <span id="langText">العربية</span>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,39 +13,39 @@
 
     <nav class="oval-menu" id="sideMenu">
         <div class="menu-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="login/login.html">تسجيل الدخول</a>
-            <a href="food healthy/healthy-food.html">أكل صحي</a>
-            <a href="drinkhealthy/healthy-drinks.html">مشروبات صحية</a>
+            <a href="index.html" id="nav-home">الرئيسية</a>
+            <a href="login/login.html" id="nav-login">تسجيل الدخول</a>
+            <a href="food healthy/healthy-food.html" id="nav-healthy-food">أكل صحي</a>
+            <a href="drinkhealthy/healthy-drinks.html" id="nav-healthy-drinks">مشروبات صحية</a>
         </div>
     </nav>
 
     <main>
         <header class="hero-section reveal">
             <button class="lang-btn" id="languageToggle" onclick="toggleLanguage()">
-    <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-    </svg>
-    <span id="langText">EN</span>
-</button>
-            <h1 class="main-title"> الطبخ مع سلوي </h1>
+                <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span id="langText">EN</span>
+            </button>
+            <h1 class="main-title" id="main-title">الطبخ مع سلوي</h1>
             <div class="slogan-container">
-                <p class="slogan">نمزج المحبة مع الغذاء بلمسة إبداع</p>
+                <p class="slogan" id="slogan">نمزج المحبة مع الغذاء بلمسة إبداع</p>
             </div>
         </header>
 
         <section class="main-courses-grid">
-            
+
             <div class="oval-card reveal">
                 <div class="image-wrapper">
                     <img src="https://i.ytimg.com/vi/5OnbW2UZAew/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCM4zhfqkWkNmKvTiJ2f9ib21iaFA" alt="مجبوس اللحم">
                 </div>
                 <div class="course-info-center">
-                    <h3>مجبوس اللحم الفاخر</h3>
-                    <p>بلمسات سلوى الخاصة ومزيج المحبة، سر النكهة الخليجية الأصلية.</p>
-                    <span class="calories-badge">850 سعرة</span>
+                    <h3 id="dish1-title">مجبوس اللحم الفاخر</h3>
+                    <p id="dish1-desc">بلمسات سلوى الخاصة ومزيج المحبة، سر النكهة الخليجية الأصلية.</p>
+                    <span class="calories-badge" id="dish1-cal">850 سعرة</span>
                 </div>
             </div>
 
@@ -55,28 +54,29 @@
                     <img src="https://i.ytimg.com/vi/oogTme6TXyk/maxresdefault.jpg" alt="صينية دجاج">
                 </div>
                 <div class="course-info-center">
-                    <h3>صينية الدجاج بالخضار</h3>
-                    <p>غذاء صحي يغمر القلب بالدفء، خضروات طازجة مطهوة بعناية.</p>
-                    <span class="calories-badge">420 سعرة</span>
+                    <h3 id="dish2-title">صينية الدجاج بالخضار</h3>
+                    <p id="dish2-desc">غذاء صحي يغمر القلب بالدفء، خضروات طازجة مطهوة بعناية.</p>
+                    <span class="calories-badge" id="dish2-cal">420 سعرة</span>
                 </div>
             </div>
 
         </section>
     </main>
+
     <section class="contact-section reveal">
-    <h3 style="color: var(--main-orange);">تواصل وتوصيل</h3>
-    <div class="contact-grid">
-        <a href="https://wa.me/01028857656"  target="_blank" class="contact-card">واتساب</a>
-        <a href="https://web.facebook.com/" class="contact-card">فيسبوك</a>
-        <a href="#" class="contact-card">اتصال هاتف</a>
-        <a href="#" class="contact-card">الخط الأرضي</a>
-    </div>
-</section>
+        <h3 id="contact-title" style="color: var(--main-orange);">تواصل وتوصيل</h3>
+        <div class="contact-grid">
+            <a href="https://wa.me/01028857656" target="_blank" class="contact-card" id="contact-whatsapp">واتساب</a>
+            <a href="https://web.facebook.com/" class="contact-card" id="contact-facebook">فيسبوك</a>
+            <a href="#" class="contact-card" id="contact-phone">اتصال هاتف</a>
+            <a href="#" class="contact-card" id="contact-landline">الخط الأرضي</a>
+        </div>
+    </section>
 
     <footer class="footer">
-        <p>جميع الحقوق محفوظة لمطبخ سلوى &copy; 2026</p>
+        <p id="footer-text">جميع الحقوق محفوظة لمطبخ سلوى ©️ 2026</p>
     </footer>
-  
+
     <script src="script.js"></script>
 </body>
 </html>
