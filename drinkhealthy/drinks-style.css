@@ -14,7 +14,49 @@ body {
     overflow-x: hidden;
 }
 
-/* زر القائمة */
+/* تنسيق حاوية أزرار اللغة الكبسولية الزجاجية العائمة */
+.lang-switch-container {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(230, 126, 34, 0.1);
+}
+
+.lang-switch-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--dark-orange);
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.lang-switch-container button:hover {
+    background: var(--main-orange);
+    color: white;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* زر القائمة العائم */
 .menu-trigger {
     position: fixed;
     top: 30px;
@@ -33,7 +75,13 @@ body {
     border: 1px solid rgba(230, 126, 34, 0.1);
 }
 
-/* القائمة البيضاوية */
+.menu-trigger:hover {
+    transform: scale(1.05);
+    background: var(--main-orange);
+    color: white;
+}
+
+/* القائمة البيضاوية الجانبية وتعديلاتها */
 .oval-menu {
     position: fixed;
     top: 50%;
@@ -51,13 +99,24 @@ body {
     justify-content: center;
 }
 
+html[dir="ltr"] .oval-menu {
+    right: auto;
+    left: -100%;
+    border-radius: 0 200px 200px 0;
+    box-shadow: 20px 0 80px rgba(211, 84, 0, 0.15);
+}
+
 .oval-menu.active { right: 0; }
+html[dir="ltr"] .oval-menu.active { left: 0; right: auto; }
 
 .menu-links { display: flex; flex-direction: column; gap: 35px; padding-right: 40px; }
+html[dir="ltr"] .menu-links { padding-right: 0; padding-left: 40px; }
+
 .menu-links a { text-decoration: none; color: var(--dark-text); font-size: 1.5rem; transition: 0.3s; }
 .menu-links a:hover { color: var(--main-orange); transform: translateX(-10px); }
+html[dir="ltr"] .menu-links a:hover { transform: translateX(10px); }
 
-/* الهيرو */
+/* قسم الهيرو البصري */
 .hero-section {
     height: 50vh;
     display: flex;
@@ -75,7 +134,9 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-/* الكروت البيضاوية للمشروبات */
+.slogan { font-size: 1.2rem; margin-top: 10px; color: #555; text-align: center; padding: 0 15px; }
+
+/* الكروت البيضاوية الفاخرة وعرض المشروبات */
 .main-courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -98,6 +159,9 @@ body {
 .image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s ease; }
 .oval-card:hover img { transform: scale(1.15); }
 
+.course-info-center h3 { font-size: 1.5rem; margin: 15px 0 10px 0; color: var(--dark-text); }
+.course-info-center p { font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0; padding: 0 10px; }
+
 .calories-badge {
     display: inline-block;
     padding: 8px 25px;
@@ -109,5 +173,16 @@ body {
     margin-top: 15px;
 }
 
+/* أنيميشن الظهور التمريري المتقدم */
 .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition-smooth); }
 .reveal.active { opacity: 1; transform: translateY(0); }
+
+/* الفوتر */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(230, 126, 34, 0.1);
+    margin-top: 40px;
+}

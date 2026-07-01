@@ -3,91 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المشروبات الصحية | مطبخ سلوى</title>
+    <title data-i18n="drinks_page_title">المشروبات الصحية | مطبخ سلوى</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="drinks-style.css">
 </head>
 <body>
 
-    <div class="menu-trigger" id="menuBtn">المزيد</div>
+    <!-- زر القائمة العائم التفاعلي -->
+    <div class="menu-trigger" id="menuBtn" data-i18n="more_btn">المزيد</div>
 
+    <!-- حاوية أزرار اللغة الكبسولية الزجاجية -->
+    <div class="lang-switch-container">
+        <button class="lang-btn" id="languageToggle" title="تغيير اللغة / Change Language">
+            <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+        </button>
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('ar')">العربية</button>
+    </div>
+
+    <!-- القائمة البيضاوية الجانبية -->
     <nav class="oval-menu" id="sideMenu">
         <div class="menu-links">
-            <a href="../index.html">الرئيسية</a>
-            <a href="../login/login.html">تسجيل الدخول</a>
-            <a href="../food healthy/healthy-food.html">أكل صحي</a>
-            <a href="../drinkhealthy/healthy-drinks.html">مشروبات صحية</a>
+            <a href="../index.html" data-i18n="nav_main">الرئيسية</a>
+            <a href="../login/login.html" data-i18n="nav_login">تسجيل الدخول</a>
+            <a href="../food healthy/healthy-food.html" data-i18n="nav_healthy">أكل صحي</a>
+            <a href="../drinkhealthy/healthy-drinks.html" data-i18n="nav_drinks">مشروبات صحية</a>
         </div>
     </nav>
 
     <main>
+        <!-- الهيدر الرئيسي للمشروبات -->
         <header class="hero-section reveal">
-            <h1 class="main-title">مشروبات سلوي</h1>
-            <p class="slogan">عصائر طازجة وخلطات عشبية تعيد لك الحيوية</p>
+            <h1 class="main-title" data-i18n="drinks_main_title">مشروبات سلوى</h1>
+            <p class="slogan" data-i18n="drinks_subtitle">عصائر طازجة وخلطات عشبية تعيد لك الحيوية</p>
         </header>
 
+        <!-- شبكة عرض المشروبات الصحية الستة الكاملة -->
         <section class="main-courses-grid">
             <!-- مشروب 1 -->
             <div class="oval-card reveal">
-                <div class="image-wrapper"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCne3hIDRqcjus-mghiziFFcCbfA9wy1zYoA&s" alt="سموذي"></div>
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCne3hIDRqcjus-mghiziFFcCbfA9wy1zYoA&s" alt="ديتوكس الأخضر">
+                </div>
                 <div class="course-info-center">
-                    <h3>ديتوكس الأخضر</h3>
-                    <p>تفاح أخضر وكرفس لتعزيز المناعة.</p>
-                    <span class="calories-badge">90 سعرة</span>
+                    <h3 data-i18n="drink_1_title">ديتوكس الأخضر</h3>
+                    <p data-i18n="drink_1_desc">تفاح أخضر وكرفس لتعزيز المناعة وتطهير الجسم.</p>
+                    <span class="calories-badge" data-i18n="drink_1_cal">90 سعرة</span>
                 </div>
             </div>
 
             <!-- مشروب 2 -->
             <div class="oval-card reveal">
-                <div class="image-wrapper"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIX6a8qf1nIxl3ypn-TJ1Q6NyOLQj_wT97Sw&s" alt="توت"></div>
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIX6a8qf1nIxl3ypn-TJ1Q6NyOLQj_wT97Sw&s" alt="سموذي التوت">
+                </div>
                 <div class="course-info-center">
-                    <h3>سموذي التوت المشكل</h3>
-                    <p>مزيج غني بمضادات الأكسدة والانتعاش.</p>
-                    <span class="calories-badge">120 سعرة</span>
+                    <h3 data-i18n="drink_2_title">سموذي التوت المشكل</h3>
+                    <p data-i18n="drink_2_desc">مزيج غني بمضادات الأكسدة يمنحك انتعاشاً يدوم طويلاً.</p>
+                    <span class="calories-badge" data-i18n="drink_2_cal">120 سعرة</span>
                 </div>
             </div>
 
             <!-- مشروب 3 -->
             <div class="oval-card reveal">
-                <div class="image-wrapper"><img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/dlt/dlt99865/y/8.jpg" alt="لاتيه"></div>
+                <div class="image-wrapper">
+                    <img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/dlt/dlt99865/y/8.jpg" alt="لاتيه الكركم">
+                </div>
                 <div class="course-info-center">
-                    <h3>لاتيه الكركم الذهبي</h3>
-                    <p>مشروب دافئ مهدئ ومضاد للالتهاب.</p>
-                    <span class="calories-badge">110 سعرة</span>
+                    <h3 data-i18n="drink_3_title">لاتيه الكركم الذهبي</h3>
+                    <p data-i18n="drink_3_desc">مشروب دافئ مهدئ للأعصاب ومقاوم طبيعي للالتهابات.</p>
+                    <span class="calories-badge" data-i18n="drink_3_cal">110 سعرة</span>
                 </div>
             </div>
 
             <!-- مشروب 4 -->
             <div class="oval-card reveal">
-                <div class="image-wrapper"><img src="ginger-lemon.jpg" alt="زنجبيل"></div>
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSW_X_Oclp15rK85vscw5R1bKj9b2N6b6Glg&s" alt="زنجبيل">
+                </div>
                 <div class="course-info-center">
-                    <h3>عصير الأناناس والزنجبيل</h3>
-                    <p>مشروب حارق للدهون ومنشط للهضم.</p>
-                    <span class="calories-badge">105 سعرة</span>
+                    <h3 data-i18n="drink_4_title">عصير الأناناس والزنجبيل</h3>
+                    <p data-i18n="drink_4_desc">مشروب منعش يساعد في حرق الدهون وتحسين الهضم بشكل ملموس.</p>
+                    <span class="calories-badge" data-i18n="drink_4_cal">105 سعرة</span>
                 </div>
             </div>
 
             <!-- مشروب 5 -->
             <div class="oval-card reveal">
-                <div class="image-wrapper"><img src="iced-matcha.jpg" alt="ماتشا"></div>
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_L9F6GbyA23zL-A2wW0K4m2S-6W8z-PofUA&s" alt="ماتشا">
+                </div>
                 <div class="course-info-center">
-                    <h3>شاي الماتشا البارد</h3>
-                    <p>طاقة مستدامة وتركيز عالٍ طوال اليوم.</p>
-                    <span class="calories-badge">40 سعرة</span>
+                    <h3 data-i18n="drink_5_title">شاي الماتشا البارد</h3>
+                    <p data-i18n="drink_5_desc">طاقة يابانية مستدامة وتركيز عالي ونشاط مستمر طوال اليوم.</p>
+                    <span class="calories-badge" data-i18n="drink_5_cal">40 سعرة</span>
                 </div>
             </div>
 
             <!-- مشروب 6 -->
             <div class="oval-card reveal">
-                <div class="image-wrapper"><img src="beet-orange.jpg" alt="شمندر"></div>
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrUcozG614G_K5V_Lsk3lI2Fq_OqM4qF-VA&s" alt="شمندر">
+                </div>
                 <div class="course-info-center">
-                    <h3>عصير الشمندر والبرتقال</h3>
-                    <p>منشط طبيعي للدورة الدموية وغني بالحديد.</p>
-                    <span class="calories-badge">130 سعرة</span>
+                    <h3 data-i18n="drink_6_title">عصير الشمندر والبرتقال</h3>
+                    <p data-i18n="drink_6_desc">منشط طبيعي قوي للدورة الدموية وغني بعنصر الحديد الأساسي.</p>
+                    <span class="calories-badge" data-i18n="drink_6_cal">130 سعرة</span>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- الفوتر المترجم والمنظم للموقع -->
+    <footer class="footer">
+        <p data-i18n="rights">جميع الحقوق محفوظة لمطبخ سلوى &copy; 2026</p>
+    </footer>
 
     <script src="drinks-script.js"></script>
 </body>
