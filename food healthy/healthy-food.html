@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_healthy">الأكل الصحي | مطبخ سلوى</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylefood.css">
+</head>
+<body>
+
+    <!-- زر القائمة العائم الثابت يميناً -->
+    <div class="menu-trigger" id="menuBtn" data-i18n="more_btn">المزيد</div>
+    
+    <!-- القائمة البيضاوية الجانبية المتجاوبة مع الاتجاهين بالملي -->
+    <nav class="oval-menu" id="sideMenu">
+        <div class="menu-links">
+            <a href="../index.html"                          data-i18n="nav_main">الرئيسية</a>
+            <a href="../login/login.html"                    data-i18n="nav_login">تسجيل الدخول</a>
+            <a href="../food healthy/healthy-food.html"      data-i18n="nav_healthy">أكل صحي</a>
+            <a href="../drinkhealthy/healthy-drinks.html"    data-i18n="nav_drinks">مشروبات صحية</a>
+        </div>
+    </nav>
+
+    <!-- حاوية أزرار اللغة الكبسولية الثابتة يساراً -->
+    <div class="lang-switch-container">
+        <button class="lang-icon-btn" id="languageToggle" title="تغيير اللغة / Change Language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
+                <line x1="2" y1="12" x2="22" y2="12"></line>                
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+        </button>
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('ar')">العربية</button>
+    </div>
+   
+    <main>
+        <header class="hero-section reveal">
+            <h1 class="main-title" data-i18n="healthy_title">غذاء للروح والبدن</h1>
+            <p class="slogan" data-i18n="healthy_slogan">أطباق صحية بلمسة احترافية</p>
+        </header>
+
+        <section class="main-courses-grid">
+            <!-- الكارت الأول -->
+            <div class="oval-card reveal">
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7teQoyXVg6U_yG7V2qeOAAelbMYyViGTAJw&s" alt="سلمون">
+                </div>
+                <div class="course-info-center">
+                    <h3 data-i18n="dish_1_title">سلمون مشوي</h3>
+                    <p data-i18n="dish_1_desc">سلمون فاخر مع خضار سوتيه.</p>
+                    <span class="calories-badge" data-i18n="dish_1_cal">350 سعرة</span>
+                </div>
+            </div>
+
+            <!-- الكارت الثاني -->
+            <div class="oval-card reveal">
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7teQoyXVg6U_yG7V2qeOAAelbMYyViGTAJw&s" alt="سلمون">
+                </div>
+                <div class="course-info-center">
+                    <h3 data-i18n="dish_2_title">سلمون مشوي</h3>
+                    <p data-i18n="dish_2_desc">سلمون فاخر مع خضار سوتيه.</p>
+                    <span class="calories-badge" data-i18n="dish_2_cal">350 سعرة</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="rights">جميع الحقوق محفوظة لمطبخ سلوى &copy; 2026</p>
+    </footer>
+
+    <script src="scriptfood.js"></script>
+</body>
+</html>
